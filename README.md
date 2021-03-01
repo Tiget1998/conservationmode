@@ -3,7 +3,7 @@ Terminal command that can trigger Lenovo's built in conservation mode from Linux
 
 Conservation mode is a function for most modern Lenovo laptops. When plugged in the laptop will not charge if above ~60% battery.
 Ideal if you are planning to use it somewhere, where it is plugged in all the time as to not damage the battery.
-Normally it would require you to swith to Windows to trigger this function. Or run a string of commands in linux to trigger it.
+Normally it would require you to switch to Windows in order to trigger this function. Or run a string of commands in the terminal to trigger it.
 This is a useful shortcut of those commands.
 
 # install
