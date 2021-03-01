@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#get the variable for conservation mode which is most likely the general case
+mode=$(cat /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode)
+case $1 in
+    on)
+        if [[ $mode -eq 1 ]]; then echo "conservation mode is already enabled";else echo "turning on"&& echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode; fi
+        ;;
+    off)
+        if [[ $mode -eq 0 ]]; then echo "conservation mode is already disabled";else echo "turning off"&& echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode; fi
+        ;;
+    status)
+        if [[ $mode -eq 1 ]]; then echo "conservation mode is enabled";else echo "conservation mode is disabled"; fi
+        ;;
+    help)
+        echo "available commands: on | off | status | help"
+        ;;
+    *)
+        echo "available commands: on | off | status | help"
+        ;;  
+esac
+#"$@"
